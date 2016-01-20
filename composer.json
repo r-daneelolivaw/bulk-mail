@@ -1,0 +1,7 @@
+{
+    "require": {
+        "league/csv": "^8.0",
+        "mailchimp/mailchimp": "^2.0",
+        "mailgun/mailgun-php": "^1.8"
+    }
+}
