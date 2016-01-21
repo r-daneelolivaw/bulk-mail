@@ -1,7 +1,32 @@
 {
+    "name": "colorfield/bulk-mail",
+    "description": "Mailing list bulk mail helpers. Clean and send with a vendor agnostic approach",
+    "keywords": ["mail", "csv", "clean", "send"],
+    "homepage": "https://github.com/r-daneelolivaw/bulk-mail",
+    "license": "Apache 2",
+    "authors": [
+        {
+            "name": "Christophe Jossart",
+            "homepage": "https://github.com/r-daneelolivaw",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "cjossart@gmail.com"
+    },
     "require": {
+        "php" : ">=5.5.9",
         "league/csv": "^8.0",
         "mailchimp/mailchimp": "^2.0",
-        "mailgun/mailgun-php": "^1.8"
+        "mailgun/mailgun-php": "^1.8",
+        "symfony/yaml": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Colorfield\\": "src/"
+        }
     }
 }

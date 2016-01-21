@@ -1,7 +1,8 @@
 composer.phar
 /vendor/
+/files
+/examples/settings/settings.yml
 
 # IDE
 .idea
-
 .idea/vcs.xml
