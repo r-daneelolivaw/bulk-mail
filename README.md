@@ -1,5 +1,7 @@
 # Bulk mail
 
+_Currently under development_
+
 ## Features
 
 ### Mailing list cleaning 
@@ -13,8 +15,6 @@ Sends in multipart to a mailing list using a transactional service like Mandrill
 Optionally, arguments can be passed to send to a segment (grades) or to the did you mean column.
 
 ## Getting started
-
-_Currently under development_
 
 * [Install Composer](https://getcomposer.org/doc/00-intro.md#system-requirements) if needed 
 * Install dependencies `composer install`
