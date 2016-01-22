@@ -1,6 +1,13 @@
 <?php
 require '../vendor/autoload.php';
+
+// one column, without header
 $csvPath = 'files/one-column-mailing-list.csv';
-// @todo provide more examples
 $bulkmail = new \Colorfield\Bulkmail\BulkMail($csvPath);
-$bulkmail->clean(true);
+$bulkmail->clean(false);
+
+// @todo multiple columns, with header
+
+// @todo add did you mean addresses
+
+// @todo add grade

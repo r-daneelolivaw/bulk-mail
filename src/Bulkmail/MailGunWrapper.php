@@ -10,8 +10,8 @@ use Mailgun\Mailgun;
  */
 class MailGunWrapper implements Cleaner, Sender {
   // @todo move in settings.yml
-  const KEY = 'pubkey-5ogiflzbnjrljiky49qxsiozqef5jxp7'; // @todo replace by api key
-  const DOMAIN = 'your-domain'; // @todo replace by your domain
+  const KEY = 'pubkey-5ogiflzbnjrljiky49qxsiozqef5jxp7'; // @todo replace by api key, set this in settings.yml
+  const DOMAIN = 'your-domain'; // @todo replace by your domain, set this in settings.yml
 
   private $client = NULL;
 
@@ -65,21 +65,3 @@ class MailGunWrapper implements Cleaner, Sender {
   }
 
 }
-
-// @todo move in unit test
-$mailGun = new MailGunWrapper();
-// send a message
-/*
-$variables = array(
-  'from'    => 'Mailgun Sandbox <postmaster@your-sandobx.mailgun.org>',
-  'to'      => 'John Doe <your@email.com>',
-  'subject' => 'Hello John Doe',
-  'text'    => 'Test email'
-);
-$result = $mailGun->sendMessage($variables);
-print_r($result);
-*/
-
-// validate email
-$result = $mailGun->validateAddress('john@doe.com');
-print_r($result);
