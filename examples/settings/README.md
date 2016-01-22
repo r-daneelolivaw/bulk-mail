@@ -1,0 +1,1 @@
+Copy the default.settings.yml as settings.yml that will be gitignored.
