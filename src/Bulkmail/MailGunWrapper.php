@@ -20,7 +20,7 @@ class MailGunWrapper implements Cleaner, Sender {
   }
 
   /**
-   * @inheritdoc
+   * {@inheritdoc}
    * @throws \Mailgun\Messages\Exceptions\MissingRequiredMIMEParameters
    */
   public function sendMessage(array $variables) {
@@ -30,7 +30,7 @@ class MailGunWrapper implements Cleaner, Sender {
   }
 
   /**
-   * @inheritdoc
+   * {@inheritdoc}
    */
   public function validateAddress($mail) {
     $response = $this->client->get("address/validate", array('address' => $mail));
@@ -39,7 +39,7 @@ class MailGunWrapper implements Cleaner, Sender {
   }
 
   /**
-   * @inheritdoc
+   * {@inheritdoc}
    */
   public function parseAddressList(array $mailList) {
     $response = $this->client->get("address/parse", array('addresses' => $mailList));
@@ -63,5 +63,4 @@ class MailGunWrapper implements Cleaner, Sender {
     }
     return $result;
   }
-
 }

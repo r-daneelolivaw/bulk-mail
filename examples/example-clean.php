@@ -2,7 +2,7 @@
 require '../vendor/autoload.php';
 
 // one column, without header
-$csvPath = 'files/one-column-mailing-list.csv';
+$csvPath = 'files/csv/one-column-mailing-list.csv';
 $bulkmail = new \Colorfield\Bulkmail\BulkMail($csvPath);
 $bulkmail->clean(false);
 

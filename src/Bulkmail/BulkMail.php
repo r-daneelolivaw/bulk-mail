@@ -13,6 +13,7 @@ class BulkMail {
   private $csv = null;
   private $validator = null;
   private $cleaner = null;
+  private $sender = null;
   private $mailColumn = 0;
 
   function __construct($pathToCSV, $column = 0) {
@@ -41,7 +42,7 @@ class BulkMail {
     }
 
     if (!empty($rows)) {
-      // @todo provide factory or inject dependence
+      // @todo provide factory or inject dependence or fetch from settings.yml
       $this->validator = new MailGunWrapper();
       // @todo parse addresses first and retain only the correct ones
       // @todo log the wrong addresses in a csv log :
@@ -54,32 +55,22 @@ class BulkMail {
 
   /**
    * @todo description
+   * Validation and/or cleaning must be handled by the client.
    * @param $pathToHtml
    * @param $pathToText
    * @param array $options
    */
   public function send($pathToHtml, $pathToText, array $options) {
     // @todo implement
-    // @todo adapter between the API's
-    $variables = array(
-      'from'  => array(
-        'Jane Doe <jane@doe.com>',
-      ),
-      'to'  => array(
-        'John Doe <john@doe.com>',
-      ),
-      'cc'  => array(
+    // @todo provide factory or inject dependence or fetch from settings.yml
+    $this->sender = new MandrillWrapper();
 
-      ),
-      'bcc'  => array(
+    // @todo populate to with csv
+    // @todo set html from file
+    // @todo set text from file
 
-      ),
-      'subject' => 'Hello John Doe',
-      'text'    => 'Test email',
-      'html'    => '<p>Test email</p>'
-    );
     // @todo provide the same object if it implements both Cleaner and Sender
-    //$result = $mailGun->sendMessage($variables);
+    $result = $this->sender->sendMessage($options);
   }
 
   /**

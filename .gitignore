@@ -1,7 +1,7 @@
 composer.phar
 /vendor/
 /files
-/examples/settings/settings.yml
+/settings/settings.yml
 
 # IDE
 .idea
