@@ -4,7 +4,8 @@ namespace Colorfield\Bulkmail;
 use DotBlue\Mandrill;
 
 /**
- * Class MandrillWrapper
+ * Class MandrillWrapper.
+ * @todo review Mandrill changes : http://blog.mandrill.com/important-changes-to-mandrill.html
  * Adapter for Mandrill, based on DotBlue api wrapper.
  * @package colorfield\bulkmail
  */
