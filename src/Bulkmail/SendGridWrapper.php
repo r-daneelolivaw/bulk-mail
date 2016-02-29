@@ -3,6 +3,7 @@ namespace Colorfield\Bulkmail;
 
 use SendGrid\SendGrid;
 use SendGrid\Email;
+use SendGrid\Response;
 
 /**
  * Adapter for Sendgrid.
@@ -28,7 +29,7 @@ class SendGridWrapper implements Sender {
           ->setSubject($variables['subject'])
           ->setHtml($variables['html']);
     $response = $this->client->send($email);
-  
+
     $result = $this->getResponse($response);
     return $result;
   }
@@ -41,8 +42,8 @@ class SendGridWrapper implements Sender {
    */
   private function getResponse($response) {
     $result = NULL;
-    if ((int) $response->http_response_code === 200) {
-      $result = $response->http_response_body;
+    if ((int) $response->getCode() === 200) {
+      $result = $response->getBody();
     }
     else {
       // @todo throw exception
